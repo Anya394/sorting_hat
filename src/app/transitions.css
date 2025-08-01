@@ -1,0 +1,41 @@
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.choice-button {
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 8px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.choice-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pulse-on-hover:hover {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Темы факультетов */
+.gryffindor-theme { background-color: #740001; color: #eeba30; }
+.slytherin-theme { background-color: #1a472a; color: #aaaaaa; }
+.ravenclaw-theme { background-color: #0e1a40; color: #946b2d; }
+.hufflepuff-theme { background-color: #372e29; color: #f0c75e; }
