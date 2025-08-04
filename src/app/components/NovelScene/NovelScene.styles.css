@@ -1,0 +1,12 @@
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.story-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
