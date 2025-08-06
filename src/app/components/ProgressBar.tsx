@@ -28,7 +28,7 @@ export default function ProgressBar({ progress, color }: ProgressBarProps) {
     hufflepuff: '#ecb939',
   };
 
-  const barColor = color || houseColors.gryffindor;
+  const barColor = '#1a1a1a';
 
   return (
     <div className="progress-bar-container">

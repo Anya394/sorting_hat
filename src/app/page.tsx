@@ -17,11 +17,9 @@ export default function Home() {
             priority // Если фон критичен для LCP
             quality={100}
           />
-          <h1 style={{ position: 'relative', zIndex: 1 }}>
-            Добро пожаловать в Хогвартс
-          </h1>
+          <h1 className={styles.h1}>Добро пожаловать в Хогвартс</h1>
 
-          <p style={{ position: 'relative', zIndex: 1 }}>
+          <p className={styles.p}>
             Пройдите испытание Распределяющей Шляпы и узнайте, на какой
             факультет вы попадёте!
           </p>
