@@ -2,22 +2,33 @@
 
 import { useNovelGame } from '../hooks/useNovelGame';
 import NovelScene from '../components/NovelScene/NovelScene';
-import HouseResult from '../components/HouseResult';
 import ProgressBar from '../components/ProgressBar';
 import '../transitions.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import './page.styles.css';
 import { useRouter } from 'next/navigation';
-import { Choice } from '../types';
+import { useTraitsStore, useCurrentNodeStore } from '@/store/store';
+import storyData from '../../data/plot.json';
 
 export default function GamePage() {
-  const { currentNode, traits, handleChoice, calculateHouse, visitedNodes } =
-    useNovelGame();
-    const router = useRouter();
+  const { currentNode, traits, handleChoice, visitedNodes } = useNovelGame();
+  const router = useRouter();
+  const changeTraits = useTraitsStore((state) => state.changeTraits);
+  const changeСurrentNode = useCurrentNodeStore(
+    (state) => state.changeCurrentNode
+  );
 
-    const handleEnd = () => {
-      router.push('/results');
-    };
+  const handleEnd = () => {
+    changeTraits(traits);
+    if (currentNode.choices) {
+      const nextNode =
+        storyData.nodes.find((n) => n.id === currentNode.choices[0].next) ||
+        storyData.nodes[0];
+      changeСurrentNode(nextNode);
+    }
+
+    router.push('/results');
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -33,10 +44,10 @@ export default function GamePage() {
 
             {currentNode.id === 'end' ? (
               <NovelScene
-              text={currentNode.text}
-              choices={currentNode.choices}
-              onChoice={handleEnd}
-            />
+                text={currentNode.text}
+                choices={currentNode.choices}
+                onChoice={handleEnd}
+              />
             ) : (
               <NovelScene
                 text={currentNode.text}

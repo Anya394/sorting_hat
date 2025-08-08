@@ -7,7 +7,6 @@ type Props = {
 };
 
 export default function HouseResult({ traits, node }: Props) {
-  //console.log(traits, node);
   const house = Object.entries({
     gryffindor: traits.courage * 1.8,
     slytherin: traits.ambition * 1.7,

@@ -44,5 +44,6 @@ export const useNovelGame = () => {
     handleChoice,
     calculateHouse,
     visitedNodes,
+    setCurrentNode,
   };
 };

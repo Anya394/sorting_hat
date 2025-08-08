@@ -1,13 +1,13 @@
 'use client';
 
-import { useNovelGame } from '../hooks/useNovelGame';
 import HouseResult from '../components/HouseResult';
 import '../transitions.css';
 import './page.styles.css';
+import { useTraitsStore, useCurrentNodeStore } from '@/store/store';
 
 export default function ResultsPage() {
-  const { currentNode, traits, handleChoice, calculateHouse, visitedNodes } =
-    useNovelGame();
+  const traits = useTraitsStore((state) => state.traits);
+  const currentNode = useCurrentNodeStore((state) => state.currentNode);
 
   console.log(traits, currentNode);
 
