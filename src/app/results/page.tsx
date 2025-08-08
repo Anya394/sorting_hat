@@ -5,7 +5,7 @@ import HouseResult from '../components/HouseResult';
 import '../transitions.css';
 import './page.styles.css';
 
-export default function GamePage() {
+export default function ResultsPage() {
   const { currentNode, traits, handleChoice, calculateHouse, visitedNodes } =
     useNovelGame();
 

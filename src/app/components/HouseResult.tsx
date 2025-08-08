@@ -26,7 +26,6 @@ export default function HouseResult({ traits, node }: Props) {
           </div>
         ))}
       </div>
-      <Link href="/end">В конец</Link>
     </div>
   );
 }

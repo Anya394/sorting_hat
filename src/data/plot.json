@@ -28,7 +28,7 @@
       "choices": [
         {
           "text": "Спрятать письмо за пазуху и притвориться спящим",
-          "next": "result",
+          "next": "end",
           "traits": {
             "wisdom": 2,
             "caution": 3
@@ -36,7 +36,7 @@
         },
         {
           "text": "Поднять письмо и гордо заявить: «Я уезжаю учиться магии!»",
-          "next": "result",
+          "next": "end",
           "traits": {
             "courage": 3,
             "loyalty": 1
@@ -50,7 +50,7 @@
       "choices": [
         {
           "text": "Тайком собрать вещи и ждать полуночи у двери",
-          "next": "result",
+          "next": "end",
           "traits": {
             "wisdom": 3,
             "ambition": 2
@@ -58,10 +58,24 @@
         },
         {
           "text": "Устроить скандал с криками о волшебных правах",
-          "next": "result",
+          "next": "end",
           "traits": {
             "courage": 5,
             "loyalty": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "text": "Вы прошли испытание!",
+      "choices": [
+        {
+          "text": "Узнать факультет",
+          "next": "result",
+          "traits": {
+            "wisdom": 0,
+            "ambition": 0
           }
         }
       ]

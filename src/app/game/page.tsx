@@ -7,10 +7,17 @@ import ProgressBar from '../components/ProgressBar';
 import '../transitions.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import './page.styles.css';
+import { useRouter } from 'next/navigation';
+import { Choice } from '../types';
 
 export default function GamePage() {
   const { currentNode, traits, handleChoice, calculateHouse, visitedNodes } =
     useNovelGame();
+    const router = useRouter();
+
+    const handleEnd = () => {
+      router.push('/results');
+    };
 
   return (
     <AnimatePresence mode="wait">
@@ -24,8 +31,12 @@ export default function GamePage() {
           <div className="game-container">
             <ProgressBar progress={(visitedNodes.size / 3) * 100} />
 
-            {currentNode.type === 'result' ? (
-              <HouseResult traits={traits} node={currentNode} />
+            {currentNode.id === 'end' ? (
+              <NovelScene
+              text={currentNode.text}
+              choices={currentNode.choices}
+              onChoice={handleEnd}
+            />
             ) : (
               <NovelScene
                 text={currentNode.text}
