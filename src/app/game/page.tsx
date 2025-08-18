@@ -9,6 +9,7 @@ import './page.styles.css';
 import { useRouter } from 'next/navigation';
 import { useTraitsStore, useCurrentNodeStore } from '@/store/store';
 import storyData from '../../data/plot.json';
+import { StoryNode } from '../types';
 
 export default function GamePage() {
   const { currentNode, traits, handleChoice, visitedNodes } = useNovelGame();
@@ -22,9 +23,9 @@ export default function GamePage() {
     changeTraits(traits);
     if (currentNode.choices) {
       const nextNode =
-        storyData.nodes.find((n) => n.id === currentNode.choices[0].next) ||
+        storyData.nodes.find((n) => n.id === currentNode.choices?.[0].next) ||
         storyData.nodes[0];
-      changeСurrentNode(nextNode);
+      changeСurrentNode(nextNode as StoryNode);
     }
 
     router.push('/results');

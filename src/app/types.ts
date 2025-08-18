@@ -10,7 +10,7 @@ export type Traits = {
 export type Choice = {
   text: string;
   next: string;
-  traits: Partial<Record<keyof Traits, number>>;
+  traits: Traits;
 };
 
 export type StoryNode = {
@@ -18,10 +18,7 @@ export type StoryNode = {
   text: string;
   choices?: Choice[];
   type?: 'result';
+  houseTexts?: Record<string, string>;
 };
 
-export type HogwartsHouse =
-  | 'gryffindor'
-  | 'slytherin'
-  | 'ravenclaw'
-  | 'hufflepuff';
+type HogwartsHouse = 'gryffindor' | 'slytherin' | 'ravenclaw' | 'hufflepuff';

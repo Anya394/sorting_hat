@@ -34,7 +34,7 @@
 }
 
 /* Темы факультетов */
-.gryffindor-theme { background-color: #740001; color: #eeba30; }
-.slytherin-theme { background-color: #1a472a; color: #aaaaaa; }
-.ravenclaw-theme { background-color: #0e1a40; color: #946b2d; }
-.hufflepuff-theme { background-color: #372e29; color: #f0c75e; }
+.gryffindor-theme { color: #eeba30; }
+.slytherin-theme { color: #aaaaaa; }
+.ravenclaw-theme { color: #946b2d; }
+.hufflepuff-theme { color: #f0c75e; }
