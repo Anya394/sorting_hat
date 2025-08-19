@@ -1,6 +1,7 @@
 import { StoryNode } from '../../types';
 import styles from './HouseResult.module.css';
 import Image from 'next/image';
+import { houses } from '../../../data/constants';
 
 type Props = {
   traits: Record<string, number>;
@@ -31,12 +32,15 @@ export default function HouseResult({ traits, node }: Props) {
       </div>
 
       <div className={styles.content}>
-        <h2>{node.houseTexts?.[house] || 'Шляпа задумалась...'}</h2>
         <div className="traits-breakdown">
           {Object.entries(traits).map(([trait, value]) => (
             <div key={trait} className="trait-row">
               <span>{trait}:</span>
               <progress value={value} max="20" />
+        <p className={styles.houseName}>
+          {houses[house as keyof typeof houses]}!
+        </p>
+        <p className={styles.houseText}>{node.houseTexts?.[house]}</p>
             </div>
           ))}
         </div>

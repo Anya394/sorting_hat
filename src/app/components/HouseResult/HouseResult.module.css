@@ -19,3 +19,14 @@
   text-align: center;
   color: aliceblue;
 }
+
+.houseName {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.houseText {
+  font-size: 1.5rem;
+  margin: 0 0 2rem 0;
+}
