@@ -15,11 +15,13 @@ export default function HouseResult({ traits, node }: Props) {
     hufflepuff: traits.loyalty * 1.5 + traits.caution * 1.3,
   }).sort((a, b) => b[1] - a[1])[0][0];
 
+  const background = `/${house}.jpg`;
+
   return (
     <div className={styles.resultScreen}>
       <div className={styles.background}>
         <Image
-          src="/background.jpg"
+          src={background}
           alt="Фон"
           fill
           style={{ objectFit: 'cover' }}
