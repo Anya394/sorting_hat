@@ -9,7 +9,12 @@ export default function DetailsButton({ handlerClick, show }: Props) {
   const buttonText = show ? 'Подробнее' : 'Скрыть';
 
   return (
-    <button className={styles.detailsButton} onClick={handlerClick} aria-label={buttonText} type="button">
+    <button
+      className={styles.detailsButton}
+      onClick={handlerClick}
+      aria-label={buttonText}
+      type="button"
+    >
       {buttonText}
     </button>
   );

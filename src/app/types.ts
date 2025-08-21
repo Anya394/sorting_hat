@@ -21,4 +21,4 @@ export type StoryNode = {
   houseTexts?: Record<string, string>;
 };
 
-type HogwartsHouse = 'gryffindor' | 'slytherin' | 'ravenclaw' | 'hufflepuff';
+export type Houses = 'gryffindor' | 'slytherin' | 'ravenclaw' | 'hufflepuff';

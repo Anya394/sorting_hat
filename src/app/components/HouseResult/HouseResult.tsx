@@ -1,9 +1,10 @@
-import { StoryNode } from '../../types';
+import { Houses, StoryNode } from '../../types';
 import styles from './HouseResult.module.css';
 import Image from 'next/image';
-import { houses } from '../../../data/constants';
 import { useState } from 'react';
 import DetailsButton from '../Buttons/Delails/Details';
+import CalculationInfo from '../CalculationInfo/CalculationInfo';
+import * as F from '../../../functions/functions';
 
 type Props = {
   traits: Record<string, number>;
@@ -27,7 +28,7 @@ export default function HouseResult({ traits, node }: Props) {
   const background = `/${house}.jpg`;
 
   return (
-    <div className={styles.resultScreen}>
+    <div>
       <div className={styles.background}>
         <Image
           src={background}
@@ -41,9 +42,7 @@ export default function HouseResult({ traits, node }: Props) {
       </div>
 
       <div className={styles.content}>
-        <p className={styles.houseName}>
-          {houses[house as keyof typeof houses]}!
-        </p>
+        <p className={styles.houseName}>{F.translateHouse(house)}!</p>
         <p className={styles.houseText}>{node.houseTexts?.[house]}</p>
 
         {showDetails ? (
@@ -63,17 +62,7 @@ export default function HouseResult({ traits, node }: Props) {
               ))}
             </div>
 
-            <div className={styles.calculationInfo}>
-              <h4 className={styles.infoTitle}>Как рассчитывался результат?</h4>
-              <p className={styles.infoText}>
-                Каждая черта характера даёт разное количество баллов для
-                факультетов. Например,{' '}
-                <span className={styles.keyTrait}>
-                  {getKeyTraitForHouse(house)}
-                </span>{' '}
-                — самая важная черта для {houses[house as keyof typeof houses]}.
-              </p>
-            </div>
+            <CalculationInfo house={house as Houses} />
 
             <DetailsButton handlerClick={toggleDetails} />
           </div>
@@ -83,14 +72,4 @@ export default function HouseResult({ traits, node }: Props) {
       </div>
     </div>
   );
-}
-
-function getKeyTraitForHouse(house: string): string {
-  const traits: Record<string, string> = {
-    gryffindor: 'Храбрость',
-    slytherin: 'Амбиции',
-    ravenclaw: 'Мудрость',
-    hufflepuff: 'Верность',
-  };
-  return traits[house];
 }

@@ -34,8 +34,5 @@
 .detailsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem; 
-}
-
-.traitsBreakdown {
+  gap: 2rem; 
 }
