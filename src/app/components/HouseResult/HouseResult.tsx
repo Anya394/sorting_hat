@@ -36,6 +36,7 @@ export default function HouseResult({ traits, node }: Props) {
           style={{ objectFit: 'cover' }}
           priority
           quality={100}
+          aria-hidden="true"
         />
       </div>
 

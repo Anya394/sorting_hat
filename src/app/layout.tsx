@@ -1,27 +1,23 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Underdog } from 'next/font/google';
+import { Underdog } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 const underdog = Underdog({
-  weight: '400', // обязательный параметр
+  weight: '400', // Обязательный параметр.
   subsets: ['latin', 'cyrillic'],
   variable: '--font-underdog',
-  display: 'swap', // плавная загрузка
+  display: 'swap', // Плавная загрузка.
 });
 
 export const metadata: Metadata = {
-  title: 'Sorting Hat',
+  title: {
+    default: 'Sorting Hat',
+    template: '%s | Sorting Hat',
+  },
   description: 'The sorting hat from Harry Potter',
+  keywords: ['Harry Potter', 'Sorting Hat', 'Hogwarts'],
+  authors: [{ name: 'Mokretsova Anna' }],
+  viewport: 'width=device-width, initial-scale=1', // Для мобильной адаптации.
 };
 
 export default function RootLayout({

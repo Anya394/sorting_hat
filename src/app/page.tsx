@@ -14,8 +14,9 @@ export default function Home() {
             alt="Фон"
             fill
             style={{ objectFit: 'cover' }}
-            priority // Если фон критичен для LCP
+            priority
             quality={100}
+            aria-hidden="true"
           />
           <h1 className={styles.h1}>Добро пожаловать в Хогвартс</h1>
 
