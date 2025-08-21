@@ -1,11 +1,11 @@
-.choices-container {
+.choicesContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: auto;
 }
 
-.story-text {
+.storyText {
   margin-top: auto;
   margin-bottom: 6rem;
   text-align: center;

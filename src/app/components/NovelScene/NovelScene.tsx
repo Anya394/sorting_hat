@@ -1,6 +1,6 @@
 import { Choice } from '../../types';
-import ChoiceButton from '../ChoiceButton';
-import './NovelScene.styles.css';
+import ChoiceButton from '../Buttons/Choice/Choice';
+import styles from './NovelScene.module.css';
 
 type NovelSceneProps = {
   text: string;
@@ -15,8 +15,8 @@ export default function NovelScene({
 }: NovelSceneProps) {
   return (
     <>
-      <div className="story-text">{text}</div>
-      <div className="choices-container">
+      <div className={styles.storyText}>{text}</div>
+      <div className={styles.choicesContainer}>
         {choices?.map((choice, index) => (
           <ChoiceButton
             key={index}

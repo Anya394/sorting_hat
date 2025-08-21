@@ -63,12 +63,10 @@ export default function HouseResult({ traits, node }: Props) {
             </div>
 
             <CalculationInfo house={house as Houses} />
-
-            <DetailsButton handlerClick={toggleDetails} />
+            
+            <DetailsButton onClick={toggleDetails} />
           </div>
-        ) : (
-          <DetailsButton handlerClick={toggleDetails} show />
-        )}
+        ) : (<DetailsButton onClick={toggleDetails} show />)}
       </div>
     </div>
   );

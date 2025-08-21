@@ -1,14 +1,20 @@
 'use client';
 
-import Link from 'next/link';
 import styles from './page.module.css';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import MainButton from './components/Buttons/Main/Main';
 
 export default function Home() {
+   const router = useRouter();
+
+  const handleStart = () => {
+    router.push('/game');
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.page}>
-        <div>
           <Image
             src="/background.jpg"
             alt="Фон"
@@ -25,11 +31,8 @@ export default function Home() {
             факультет вы попадёте!
           </p>
 
-          <Link href="/game" style={{ position: 'relative', zIndex: 1 }}>
-            <div className={styles.choiceButton}>Начать испытание</div>
-          </Link>
+          <MainButton text='Начать испытание' onClick={handleStart}/>
         </div>
-      </div>
     </main>
   );
 }

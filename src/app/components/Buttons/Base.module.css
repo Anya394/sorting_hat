@@ -1,0 +1,8 @@
+.base {
+  transition: all 0.3s ease;
+  color: #E2E8F0;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  cursor: pointer;
+}

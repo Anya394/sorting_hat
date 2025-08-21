@@ -1,21 +1,15 @@
+import { TBaseButton } from '@/app/types';
+import BaseButton from '../Base';
 import styles from './Details.module.css';
 
-type Props = {
-  handlerClick: () => void;
+type Props = TBaseButton & {
   show?: boolean;
 };
 
-export default function DetailsButton({ handlerClick, show }: Props) {
+export default function DetailsButton({ onClick, show }: Props) {
   const buttonText = show ? 'Подробнее' : 'Скрыть';
 
   return (
-    <button
-      className={styles.detailsButton}
-      onClick={handlerClick}
-      aria-label={buttonText}
-      type="button"
-    >
-      {buttonText}
-    </button>
+    <BaseButton className={styles.details} text={buttonText} onClick={onClick} />
   );
 }

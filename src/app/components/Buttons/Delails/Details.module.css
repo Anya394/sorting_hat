@@ -1,25 +1,19 @@
-.detailsButton {
+.details {
   font-size: 1.1rem;
   background: linear-gradient(45deg, var(--house-color), var(--house-color-dark));
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 0.2s ease;
   align-self: center;
 }
 
-.detailsButton:hover {
+.details:hover {
   opacity: 0.9;
   transform: translateY(-1px);
 }
 
-.detailsButton:focus {
+.details:focus {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
 
-.detailsButton:active {
+.details:active {
   transform: translateY(0);
 }

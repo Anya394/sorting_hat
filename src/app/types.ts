@@ -22,3 +22,8 @@ export type StoryNode = {
 };
 
 export type Houses = 'gryffindor' | 'slytherin' | 'ravenclaw' | 'hufflepuff';
+
+export type TBaseButton = {
+  text?: string;
+  onClick: () => void;
+};
