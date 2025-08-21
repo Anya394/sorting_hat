@@ -45,13 +45,16 @@
   backdrop-filter: blur(1.5px);
 }
 
-.h1 {
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
   position: relative;
   z-index: 2;
 }
 
-.p {
+.description {
   position: relative;
   z-index: 2;
   margin-top: 0.5rem;
+  font-size: 1.2rem;
 }

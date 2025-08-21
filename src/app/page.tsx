@@ -18,9 +18,9 @@ export default function Home() {
             quality={100}
             aria-hidden="true"
           />
-          <h1 className={styles.h1}>Добро пожаловать в Хогвартс</h1>
+          <p className={styles.title}>Добро пожаловать в Хогвартс</p>
 
-          <p className={styles.p}>
+          <p className={styles.description}>
             Пройдите испытание Распределяющей Шляпы и узнайте, на какой
             факультет вы попадёте!
           </p>
