@@ -1,4 +1,4 @@
-import { Houses, StoryNode } from '../../types';
+import { THouses, StoryNode } from '../../types';
 import styles from './HouseResult.module.css';
 import Image from 'next/image';
 import { useState } from 'react';

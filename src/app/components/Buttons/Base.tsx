@@ -5,7 +5,11 @@ type Props = TBaseButton & {
   className?: string;
 };
 
-export default function BaseButton({ text = '', onClick, className = '' }: Props) {
+export default function BaseButton({
+  text = '',
+  onClick,
+  className = '',
+}: Props) {
   const combinedClass = `${styles.base} ${className}`.trim();
 
   return (

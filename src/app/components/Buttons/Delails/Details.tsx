@@ -10,6 +10,10 @@ export default function DetailsButton({ onClick, show }: Props) {
   const buttonText = show ? 'Подробнее' : 'Скрыть';
 
   return (
-    <BaseButton className={styles.details} text={buttonText} onClick={onClick} />
+    <BaseButton
+      className={styles.details}
+      text={buttonText}
+      onClick={onClick}
+    />
   );
 }

@@ -1,5 +1,5 @@
-export enum houses {
-  /** Названия факультетов */
+export enum Houses {
+  /* Названия факультетов */
 
   gryffindor = 'Гриффиндор',
   hufflepuff = 'Пуффендуй',

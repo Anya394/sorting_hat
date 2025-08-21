@@ -2,8 +2,3 @@
   background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
   font-size: 1rem;
 }
-
-.choice:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}

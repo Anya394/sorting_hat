@@ -21,7 +21,8 @@ export type StoryNode = {
   houseTexts?: Record<string, string>;
 };
 
-export type Houses = 'gryffindor' | 'slytherin' | 'ravenclaw' | 'hufflepuff';
+export type THouses = 'gryffindor' | 'slytherin' | 'ravenclaw' | 'hufflepuff';
+//export type TTraits =
 
 export type TBaseButton = {
   text?: string;

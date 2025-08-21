@@ -1,9 +1,9 @@
+import * as F from '@/functions/functions';
 import styles from './CalculationInfo.module.css';
-import * as F from '../../../functions/functions';
-import { Houses } from '@/app/types';
+import { THouses } from '@/app/types';
 
 type Props = {
-  house: Houses;
+  house: THouses;
 };
 
 export default function CalculationInfo({ house }: Props) {
