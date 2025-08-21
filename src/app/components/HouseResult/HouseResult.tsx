@@ -4,7 +4,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import DetailsButton from '../Buttons/Delails/Details';
 import CalculationInfo from '../CalculationInfo/CalculationInfo';
-import * as F from '../../../functions/functions';
+import TraitRow from '../TraitRow/TraitRow';
+import { translateHouse } from '@/functions/functions';
 
 type Props = {
   traits: Record<string, number>;
@@ -42,31 +43,26 @@ export default function HouseResult({ traits, node }: Props) {
       </div>
 
       <div className={styles.content}>
-        <p className={styles.houseName}>{F.translateHouse(house)}!</p>
+        <p className={styles.houseName}>{translateHouse(house as THouses)}!</p>
         <p className={styles.houseText}>{node.houseTexts?.[house]}</p>
 
         {showDetails ? (
           <div className={styles.detailsContainer}>
-            <div className={styles.traitsBreakdown}>
-              <h3 className={styles.detailsTitle}>Характеристики:</h3>
+            <div>
+              <p className={styles.detailsTitle}>Характеристики:</p>
+
               {Object.entries(traits).map(([trait, value]) => (
-                <div key={trait} className={styles.traitRow}>
-                  <span className={styles.traitName}>{trait}:</span>
-                  <progress
-                    value={value}
-                    max="20"
-                    className={styles.progressBar}
-                  />
-                  <span className={styles.traitValue}>{value}/20</span>
-                </div>
+                <TraitRow key={trait} trait={trait} value={value} />
               ))}
             </div>
 
-            <CalculationInfo house={house as Houses} />
-            
+            <CalculationInfo house={house as THouses} />
+
             <DetailsButton onClick={toggleDetails} />
           </div>
-        ) : (<DetailsButton onClick={toggleDetails} show />)}
+        ) : (
+          <DetailsButton onClick={toggleDetails} show />
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,15 @@
+.traitRow {
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 0;
+  justify-content: center;
+}
+
+.traitName {
+    font-size: 1.2rem;
+}
+
+.traitValue {
+    font-size: 1.2rem;
+}

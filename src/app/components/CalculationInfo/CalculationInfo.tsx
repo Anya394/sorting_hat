@@ -15,18 +15,18 @@ export default function CalculationInfo({ house }: Props) {
       </p>
       <p className={styles.infoText}>
         Для {F.translateHouse(house)} самая важная черта -{' '}
-        <span>{getKeyTraitForHouse(house)}</span>.
+        <span>{F.translateTraits(getKeyTraitForHouse(house))}</span>.
       </p>
     </div>
   );
 }
 
-function getKeyTraitForHouse(house: Houses): string {
-  const traits: Record<Houses, string> = {
-    gryffindor: 'Храбрость',
-    slytherin: 'Амбиции',
-    ravenclaw: 'Мудрость',
-    hufflepuff: 'Верность',
+function getKeyTraitForHouse(house: THouses): string {
+  const traits: Record<THouses, string> = {
+    gryffindor: 'courage',
+    slytherin: 'ambition',
+    ravenclaw: 'wisdom',
+    hufflepuff: 'loyalty',
   };
   return traits[house];
 }
