@@ -32,9 +32,16 @@
 }
 
 .detailsContainer {
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.detailsContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem; 
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .detailsTitle {

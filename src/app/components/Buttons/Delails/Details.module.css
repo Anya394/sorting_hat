@@ -2,6 +2,7 @@
   font-size: 1.1rem;
   background: linear-gradient(45deg, var(--house-color), var(--house-color-dark));
   align-self: center;
+  margin: 0 0 10px;
 }
 
 .details:hover {

@@ -1,7 +1,7 @@
 import { THouses, StoryNode } from '../../types';
 import styles from './HouseResult.module.css';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import DetailsButton from '../Buttons/Delails/Details';
 import CalculationInfo from '../CalculationInfo/CalculationInfo';
 import TraitRow from '../TraitRow/TraitRow';
@@ -14,11 +14,19 @@ type Props = {
 
 export default function HouseResult({ traits, node }: Props) {
   const [showDetails, setShowDetails] = useState(false);
+  const [contentHeight, setContentHeight] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight);
+    }
+  }, [showDetails]);
+  
   const house = Object.entries({
     gryffindor: traits.courage * 1.8 + traits.curiosity * 1.4,
     slytherin: traits.ambition * 1.7 + traits.caution * 1.3,
@@ -46,10 +54,17 @@ export default function HouseResult({ traits, node }: Props) {
         <p className={styles.houseName}>{translateHouse(house as THouses)}!</p>
         <p className={styles.houseText}>{node.houseTexts?.[house]}</p>
 
-        {showDetails ? (
-          <div className={styles.detailsContainer}>
+        <div
+          ref={contentRef}
+          className={styles.detailsContainer}
+          style={{
+            maxHeight: showDetails ? `${contentHeight}px` : '0px',
+            opacity: showDetails ? 1 : 0
+          }}
+        >
+          <div className={styles.detailsContent}>
             <div>
-              <p className={styles.detailsTitle}>Характеристики:</p>
+              <p className={styles.detailsTitle}>Характеристики</p>
 
               {Object.entries(traits).map(([trait, value]) => (
                 value > 0 && <TraitRow key={trait} trait={trait} value={value} />
@@ -60,7 +75,9 @@ export default function HouseResult({ traits, node }: Props) {
 
             <DetailsButton onClick={toggleDetails} />
           </div>
-        ) : (
+        </div>
+
+        {!showDetails && (
           <DetailsButton onClick={toggleDetails} show />
         )}
       </div>
