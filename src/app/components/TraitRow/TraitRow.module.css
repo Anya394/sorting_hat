@@ -7,9 +7,33 @@
 }
 
 .traitName {
+    min-width: 120px;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .traitValue {
     font-size: 1.2rem;
+}
+
+.progressContainer {
+  width: 40%;
+  height: 20px;
+  background: #262424;
+  border-radius: 10px;
+  border: 2px solid #2c2e50;
+  flex-shrink: 0;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    #120f48 0%,
+    #4428a1 20%,
+    #9c3bb0 60%,
+    #5A0D7A 100%);
+  border-radius: 8px;
+  position: relative;
+  transition: width 0.5s ease-in-out;
+  width: 0%; /* Управляется через JS */
 }

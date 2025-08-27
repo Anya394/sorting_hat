@@ -52,7 +52,7 @@ export default function HouseResult({ traits, node }: Props) {
               <p className={styles.detailsTitle}>Характеристики:</p>
 
               {Object.entries(traits).map(([trait, value]) => (
-                <TraitRow key={trait} trait={trait} value={value} />
+                value > 0 && <TraitRow key={trait} trait={trait} value={value} />
               ))}
             </div>
 

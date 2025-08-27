@@ -7,10 +7,21 @@ type Props = {
 };
 
 export default function TraitRow({ trait, value }: Props) {
+  const progressPercentage = (value / 20) * 100;
+
   return (
     <div className={styles.traitRow}>
       <span className={styles.traitName}>{translateTraits(trait)}</span>
-      <progress value={value} max="20" className={styles.progressBar} />
+      <div className={styles.progressContainer}>
+        <div 
+          className={styles.progressFill}
+          style={{ width: `${progressPercentage}%` }}
+          role="progressbar"
+          aria-valuenow={value}
+          aria-valuemin={0}
+          aria-valuemax={20}
+        />
+      </div>
       <span className={styles.traitValue}>{value}/20</span>
     </div>
   );
