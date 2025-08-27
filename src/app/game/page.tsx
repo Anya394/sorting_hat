@@ -2,7 +2,7 @@
 
 import { useNovelGame } from '../hooks/useNovelGame';
 import NovelScene from '../components/NovelScene/NovelScene';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 import '../transitions.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import './page.styles.css';
